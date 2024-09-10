@@ -37,20 +37,6 @@ services:
       - ./bookpublish:/usr/src
       - ./maven-repo:/root/.m2
       
-  pay:
-    depends_on: 
-      - kafka
-    image: adoptopenjdk/maven-openjdk11:latest
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    command: mvn spring-boot:run
-    ports:
-      - 8083:8083
-    working_dir: /usr/src
-    volumes:
-      - ./pay:/usr/src
-      - ./maven-repo:/root/.m2
-      
   bookpurchase:
     depends_on: 
       - kafka
@@ -59,7 +45,7 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     command: mvn spring-boot:run
     ports:
-      - 0:0
+      - 8083:8083
     working_dir: /usr/src
     volumes:
       - ./bookpurchase:/usr/src
@@ -73,7 +59,7 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     command: mvn spring-boot:run
     ports:
-      - 0:0
+      - 8084:8084
     working_dir: /usr/src
     volumes:
       - ./member:/usr/src
@@ -87,7 +73,7 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     command: mvn spring-boot:run
     ports:
-      - 0:0
+      - 8085:8085
     working_dir: /usr/src
     volumes:
       - ./review:/usr/src
@@ -101,7 +87,7 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     command: mvn spring-boot:run
     ports:
-      - 0:0
+      - 8086:8086
     working_dir: /usr/src
     volumes:
       - ./genstory:/usr/src
@@ -115,9 +101,23 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     command: mvn spring-boot:run
     ports:
-      - 0:0
+      - 8087:8087
     working_dir: /usr/src
     volumes:
       - ./genimage:/usr/src
+      - ./maven-repo:/root/.m2
+      
+  pay:
+    depends_on: 
+      - kafka
+    image: adoptopenjdk/maven-openjdk11:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    command: mvn spring-boot:run
+    ports:
+      - 8088:8088
+    working_dir: /usr/src
+    volumes:
+      - ./pay:/usr/src
       - ./maven-repo:/root/.m2
       

@@ -8,13 +8,6 @@ Vue.use(Router);
 import BookpublishBookPublishManager from "./components/listers/BookpublishBookPublishCards"
 import BookpublishBookPublishDetail from "./components/listers/BookpublishBookPublishDetail"
 
-import PayPaymenthistoryManager from "./components/listers/PayPaymenthistoryCards"
-import PayPaymenthistoryDetail from "./components/listers/PayPaymenthistoryDetail"
-import Manager from "./components/listers/Cards"
-import Detail from "./components/listers/Detail"
-import Manager from "./components/listers/Cards"
-import Detail from "./components/listers/Detail"
-
 import BookpurchaseBookPurchaseManager from "./components/listers/BookpurchaseBookPurchaseCards"
 import BookpurchaseBookPurchaseDetail from "./components/listers/BookpurchaseBookPurchaseDetail"
 
@@ -30,6 +23,9 @@ import GenstoryGenStoryDetail from "./components/listers/GenstoryGenStoryDetail"
 import GenimageGenImageManager from "./components/listers/GenimageGenImageCards"
 import GenimageGenImageDetail from "./components/listers/GenimageGenImageDetail"
 
+import PayPayManager from "./components/listers/PayPayCards"
+import PayPayDetail from "./components/listers/PayPayDetail"
+
 
 export default new Router({
     // mode: 'history',
@@ -44,37 +40,6 @@ export default new Router({
                 path: '/bookpublishes/bookPublishes/:id',
                 name: 'BookpublishBookPublishDetail',
                 component: BookpublishBookPublishDetail
-            },
-
-            {
-                path: '/pays/paymenthistories',
-                name: 'PayPaymenthistoryManager',
-                component: PayPaymenthistoryManager
-            },
-            {
-                path: '/pays/paymenthistories/:id',
-                name: 'PayPaymenthistoryDetail',
-                component: PayPaymenthistoryDetail
-            },
-            {
-                path: '//',
-                name: 'Manager',
-                component: Manager
-            },
-            {
-                path: '///:id',
-                name: 'Detail',
-                component: Detail
-            },
-            {
-                path: '//',
-                name: 'Manager',
-                component: Manager
-            },
-            {
-                path: '///:id',
-                name: 'Detail',
-                component: Detail
             },
 
             {
@@ -130,6 +95,17 @@ export default new Router({
                 path: '/genimages/genImages/:id',
                 name: 'GenimageGenImageDetail',
                 component: GenimageGenImageDetail
+            },
+
+            {
+                path: '/pays/pays',
+                name: 'PayPayManager',
+                component: PayPayManager
+            },
+            {
+                path: '/pays/pays/:id',
+                name: 'PayPayDetail',
+                component: PayPayDetail
             },
 
 

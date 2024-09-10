@@ -13,30 +13,37 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/bookPublishes/**, 
+<<<<<<< HEAD
         - id: pay
           uri: http://localhost:8083
           predicates:
             - Path=/paymenthistories/**, /undefined/**, /undefined/**, 
+=======
+>>>>>>> refs/remotes/origin/main
         - id: bookpurchase
-          uri: http://localhost:0
+          uri: http://localhost:8083
           predicates:
             - Path=/bookPurchases/**, 
         - id: member
-          uri: http://localhost:0
+          uri: http://localhost:8084
           predicates:
             - Path=/members/**, 
         - id: review
-          uri: http://localhost:0
+          uri: http://localhost:8085
           predicates:
             - Path=/bookReviews/**, 
         - id: genstory
-          uri: http://localhost:0
+          uri: http://localhost:8086
           predicates:
             - Path=/genStories/**, 
         - id: genimage
-          uri: http://localhost:0
+          uri: http://localhost:8087
           predicates:
             - Path=/genImages/**, 
+        - id: pay
+          uri: http://localhost:8088
+          predicates:
+            - Path=/pays/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -65,10 +72,13 @@ spring:
           uri: http://bookpublish:8080
           predicates:
             - Path=/bookPublishes/**, 
+<<<<<<< HEAD
         - id: pay
           uri: http://pay:8080
           predicates:
             - Path=/paymenthistories/**, /undefined/**, /undefined/**, 
+=======
+>>>>>>> refs/remotes/origin/main
         - id: bookpurchase
           uri: http://bookpurchase:8080
           predicates:
@@ -89,6 +99,10 @@ spring:
           uri: http://genimage:8080
           predicates:
             - Path=/genImages/**, 
+        - id: pay
+          uri: http://pay:8080
+          predicates:
+            - Path=/pays/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:

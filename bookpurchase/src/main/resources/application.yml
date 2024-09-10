@@ -47,11 +47,11 @@ logging:
 
 api:
   url: 
-    pay: localhost:8083 
+    pay: localhost:8088 
     
 
 server:
-  port: 0
+  port: 8083
 
 ---
 
@@ -87,6 +87,6 @@ spring:
 
 api:
   url: 
-    pay: pay:8080 
+    pay: pay:8080 
     
 

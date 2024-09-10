@@ -110,6 +110,9 @@
             
             me.newValue = {
                 'story': '',
+                'bookId': 0,
+                'bookId': 0,
+                'bookId': 0,
             }
         },
         methods:{

@@ -21,12 +21,12 @@ cd /bin
 See the README.md files inside the each microservices directory:
 
 - bookpublish
-- pay
 - bookpurchase
 - member
 - review
 - genstory
 - genimage
+- pay
 
 
 ## Run API Gateway (Spring Gateway)
@@ -39,12 +39,6 @@ mvn spring-boot:run
 - bookpublish
 ```
  http :8088/bookPublishes id="id" title="title" contents="contents" imageUrl="imageUrl" price="price" memberId="memberId" 
-```
-- pay
-```
- http :8088/paymenthistories id="id" purchaseId="purchaseId" paymentTime="paymentTime" price="price" memberId="memberId" 
- http :8088/ 
- http :8088/ 
 ```
 - bookpurchase
 ```
@@ -60,11 +54,15 @@ mvn spring-boot:run
 ```
 - genstory
 ```
- http :8088/genStories id="id" story="story" 
+ http :8088/genStories id="id" story="story" bookId="bookId" bookId="bookId" bookId="bookId" 
 ```
 - genimage
 ```
- http :8088/genImages id="id" imageUrl="imageUrl" 
+ http :8088/genImages id="id" imageUrl="imageUrl" bookId="bookId" bookId="bookId" bookId="bookId" 
+```
+- pay
+```
+ http :8088/pays id="id" 
 ```
 
 
