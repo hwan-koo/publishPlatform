@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import lanedu.ReviewApplication;
+import lanedu.domain.ReviewRegistered;
 import lombok.Data;
 
 @Entity
@@ -24,6 +25,12 @@ public class BookReview {
     private Double rating;
 
     private Long bookId;
+
+    @PostPersist
+    public void onPostPersist() {
+        ReviewRegistered reviewRegistered = new ReviewRegistered(this);
+        reviewRegistered.publishAfterCommit();
+    }
 
     public static BookReviewRepository repository() {
         BookReviewRepository bookReviewRepository = ReviewApplication.applicationContext.getBean(
