@@ -17,9 +17,6 @@
 
         <v-card-text>
             <Number label="PurchaseId" v-model="value.purchaseId" :editMode="editMode" :inputUI="''"/>
-            <Date label="PaymentTime" v-model="value.paymentTime" :editMode="editMode" :inputUI="''"/>
-            <Number label="Price" v-model="value.price" :editMode="editMode" :inputUI="''"/>
-            <String label="MemberId" v-model="value.memberId" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>

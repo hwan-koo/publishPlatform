@@ -43,7 +43,7 @@ spring:
         - id: pay
           uri: http://localhost:8088
           predicates:
-            - Path=/pays/**, 
+            - Path=/paymenthistories/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -102,7 +102,7 @@ spring:
         - id: pay
           uri: http://pay:8080
           predicates:
-            - Path=/pays/**, 
+            - Path=/paymenthistories/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:

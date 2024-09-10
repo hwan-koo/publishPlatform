@@ -108,13 +108,13 @@
 
                     <v-list-item
                         class="px-2"
-                        key="pays"
-                        to="/pays/pays"
+                        key="paymenthistories"
+                        to="/pays/paymenthistories"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        Pay
+                        Paymenthistory
                     </v-list-item>
 
 
@@ -239,10 +239,10 @@ export default {
                 ImageUrl: '',
             },
             { 
-                title: 'Pay', 
+                title: 'Paymenthistory', 
                 description: '', 
-                key: 'pays', 
-                route: '/pays/pays',
+                key: 'paymenthistories', 
+                route: '/pays/paymenthistories',
                 ImageUrl: '',
             },
             

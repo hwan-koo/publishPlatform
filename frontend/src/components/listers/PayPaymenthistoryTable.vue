@@ -68,9 +68,6 @@
                 [
                     { text: "id", value: "id" },
                     { text: "purchaseId", value: "purchaseId" },
-                    { text: "paymentTime", value: "paymentTime" },
-                    { text: "price", value: "price" },
-                    { text: "memberId", value: "memberId" },
                 ],
             paymenthistory : [],
             newValue: {},
@@ -89,9 +86,6 @@
 
             this.newValue = {
                 'purchaseId': 0,
-                'paymentTime': '2024-09-10',
-                'price': 0,
-                'memberId': '',
             }
         },
         methods: {

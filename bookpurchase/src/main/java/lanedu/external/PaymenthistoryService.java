@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "pay", url = "${api.url.pay}")
+@FeignClient(name = "pay", url = "${api.url.pay}")
 public interface PaymenthistoryService {
     @RequestMapping(method = RequestMethod.POST, path = "/paymenthistories")
     public void pay(@RequestBody Paymenthistory paymenthistory);

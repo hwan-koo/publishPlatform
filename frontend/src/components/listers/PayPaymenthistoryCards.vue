@@ -110,9 +110,6 @@
             
             me.newValue = {
                 'purchaseId': 0,
-                'paymentTime': '2024-09-10',
-                'price': 0,
-                'memberId': '',
             }
         },
         methods:{

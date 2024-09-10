@@ -57,7 +57,7 @@ pluralCaseList.push( {plural: "genstories/genStories", pascal: "GenstoryGenStory
 
 pluralCaseList.push( {plural: "genimages/genImages", pascal: "GenimageGenImage"} )
 
-pluralCaseList.push( {plural: "pays/pays", pascal: "PayPay"} )
+pluralCaseList.push( {plural: "pays/paymenthistories", pascal: "PayPaymenthistory"} )
 
 
 Vue.prototype.$ManagerLists.forEach(function(item, idx) {

@@ -62,7 +62,7 @@ mvn spring-boot:run
 ```
 - pay
 ```
- http :8088/pays id="id" 
+ http :8088/paymenthistories id="id" purchaseId="purchaseId" 
 ```
 
 

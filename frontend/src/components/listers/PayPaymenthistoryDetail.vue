@@ -8,15 +8,6 @@
             <div>
                 <Number label="PurchaseId" v-model="item.purchaseId" :editMode="editMode" @change="change" />
             </div>
-            <div>
-                <Date label="PaymentTime" v-model="item.paymentTime" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <Number label="Price" v-model="item.price" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="MemberId" v-model="item.memberId" :editMode="editMode" @change="change" />
-            </div>
         </v-card-text>
 
         <v-card-actions>

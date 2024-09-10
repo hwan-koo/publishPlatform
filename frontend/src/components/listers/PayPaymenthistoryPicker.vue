@@ -17,15 +17,6 @@
                             <v-list-item-subtitle>
                                 PurchaseId :  {{item.purchaseId }}
                             </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                PaymentTime :  {{item.paymentTime }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                Price :  {{item.price }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                MemberId :  {{item.memberId }}
-                            </v-list-item-subtitle>
                         </v-list-item-content>
 
                         <v-list-item-action>
@@ -77,12 +68,6 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['id'] = arr[4]; 
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
