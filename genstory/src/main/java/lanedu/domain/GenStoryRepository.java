@@ -6,5 +6,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 //<<< PoEAA / Repository
 @RepositoryRestResource(collectionResourceRel="genStories", path="genStories")
-public interface GenStoryRepository extends PagingAndSortingRepository<GenStory, >{
+public interface GenStoryRepository extends PagingAndSortingRepository<GenStory, Long>{
 }

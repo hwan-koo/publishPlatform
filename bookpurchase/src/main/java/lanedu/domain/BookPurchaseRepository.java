@@ -6,5 +6,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 //<<< PoEAA / Repository
 @RepositoryRestResource(collectionResourceRel="bookPurchases", path="bookPurchases")
-public interface BookPurchaseRepository extends PagingAndSortingRepository<BookPurchase, >{
+public interface BookPurchaseRepository extends PagingAndSortingRepository<BookPurchase, Long>{
 }
