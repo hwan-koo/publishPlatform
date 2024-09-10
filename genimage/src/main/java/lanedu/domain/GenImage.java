@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import lanedu.GenimageApplication;
+import lanedu.domain.ImageGenerated;
 import lombok.Data;
 
 @Entity
@@ -18,6 +19,18 @@ public class GenImage {
     private Long id;
 
     private String imageUrl;
+
+    private Long bookId;
+
+    private Long bookId;
+
+    private Long bookId;
+
+    @PostPersist
+    public void onPostPersist() {
+        ImageGenerated imageGenerated = new ImageGenerated(this);
+        imageGenerated.publishAfterCommit();
+    }
 
     public static GenImageRepository repository() {
         GenImageRepository genImageRepository = GenimageApplication.applicationContext.getBean(

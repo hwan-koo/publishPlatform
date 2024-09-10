@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import lanedu.BookpurchaseApplication;
+import lanedu.domain.PurchaseRefunded;
+import lanedu.domain.PurchaseRequested;
 import lombok.Data;
 
 @Entity
@@ -24,6 +26,24 @@ public class BookPurchase {
     private Long bookId;
 
     private String memberId;
+
+    @PostPersist
+    public void onPostPersist() {
+        //Following code causes dependency to external APIs
+        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
+
+        lanedu.external.Pay pay = new lanedu.external.Pay();
+        // mappings goes here
+        BookpurchaseApplication.applicationContext
+            .getBean(lanedu.external.PayService.class)
+            .pay(pay);
+
+        PurchaseRequested purchaseRequested = new PurchaseRequested(this);
+        purchaseRequested.publishAfterCommit();
+
+        PurchaseRefunded purchaseRefunded = new PurchaseRefunded(this);
+        purchaseRefunded.publishAfterCommit();
+    }
 
     public static BookPurchaseRepository repository() {
         BookPurchaseRepository bookPurchaseRepository = BookpurchaseApplication.applicationContext.getBean(

@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import lanedu.MemberApplication;
+import lanedu.domain.Signuped;
 import lombok.Data;
 
 @Entity
@@ -26,6 +27,12 @@ public class Member {
     private String introduction;
 
     private String password;
+
+    @PrePersist
+    public void onPrePersist() {
+        Signuped signuped = new Signuped(this);
+        signuped.publishAfterCommit();
+    }
 
     public static MemberRepository repository() {
         MemberRepository memberRepository = MemberApplication.applicationContext.getBean(

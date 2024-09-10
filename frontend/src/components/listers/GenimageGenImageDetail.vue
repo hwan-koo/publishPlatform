@@ -8,6 +8,15 @@
             <div>
                 <String label="ImageUrl" v-model="item.imageUrl" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <Number label="BookId" v-model="item.bookId" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <Number label="BookId" v-model="item.bookId" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <Number label="BookId" v-model="item.bookId" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>

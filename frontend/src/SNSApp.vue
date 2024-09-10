@@ -48,40 +48,6 @@
 
                     <v-list-item
                         class="px-2"
-                        key="paymenthistories"
-                        to="/pays/paymenthistories"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        Paymenthistory
-                    </v-list-item>
-
-                    <v-list-item
-                        class="px-2"
-                        key=""
-                        to="//"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        
-                    </v-list-item>
-
-                    <v-list-item
-                        class="px-2"
-                        key=""
-                        to="//"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        
-                    </v-list-item>
-
-
-                    <v-list-item
-                        class="px-2"
                         key="bookPurchases"
                         to="/bookpurchases/bookPurchases"
                         @click="changeUrl()"
@@ -137,6 +103,18 @@
                         style="font-weight:700;"
                     >
                         GenImage
+                    </v-list-item>
+
+
+                    <v-list-item
+                        class="px-2"
+                        key="pays"
+                        to="/pays/pays"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Pay
                     </v-list-item>
 
 
@@ -226,27 +204,6 @@ export default {
                 ImageUrl: '',
             },
             { 
-                title: 'Paymenthistory', 
-                description: '', 
-                key: 'paymenthistories', 
-                route: '/pays/paymenthistories',
-                ImageUrl: '',
-            },
-            { 
-                title: '', 
-                description: '', 
-                key: '', 
-                route: '//',
-                ImageUrl: '',
-            },
-            { 
-                title: '', 
-                description: '', 
-                key: '', 
-                route: '//',
-                ImageUrl: '',
-            },
-            { 
                 title: 'BookPurchase', 
                 description: '', 
                 key: 'bookPurchases', 
@@ -279,6 +236,13 @@ export default {
                 description: '', 
                 key: 'genImages', 
                 route: '/genimages/genImages',
+                ImageUrl: '',
+            },
+            { 
+                title: 'Pay', 
+                description: '', 
+                key: 'pays', 
+                route: '/pays/pays',
                 ImageUrl: '',
             },
             

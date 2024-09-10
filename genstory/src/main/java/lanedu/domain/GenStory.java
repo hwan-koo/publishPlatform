@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import lanedu.GenstoryApplication;
+import lanedu.domain.StoryGenerated;
 import lombok.Data;
 
 @Entity
@@ -18,6 +19,18 @@ public class GenStory {
     private Long id;
 
     private String story;
+
+    private Long bookId;
+
+    private Long bookId;
+
+    private Long bookId;
+
+    @PostPersist
+    public void onPostPersist() {
+        StoryGenerated storyGenerated = new StoryGenerated(this);
+        storyGenerated.publishAfterCommit();
+    }
 
     public static GenStoryRepository repository() {
         GenStoryRepository genStoryRepository = GenstoryApplication.applicationContext.getBean(

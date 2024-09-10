@@ -43,46 +43,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pay
-  labels:
-    app: pay
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: pay
-  template:
-    metadata:
-      labels:
-        app: pay
-    spec:
-      containers:
-        - name: pay
-          image: username/pay:latest
-          ports:
-            - containerPort: 8080
-          readinessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 10
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 10
-          livenessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 120
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 5
-
----
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: bookpurchase
   labels:
     app: bookpurchase
@@ -278,6 +238,46 @@ spec:
             periodSeconds: 5
             failureThreshold: 5
 
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pay
+  labels:
+    app: pay
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pay
+  template:
+    metadata:
+      labels:
+        app: pay
+    spec:
+      containers:
+        - name: pay
+          image: username/pay:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
 
 ---
 
@@ -294,23 +294,6 @@ spec:
       targetPort: 8080
   selector:
     app: bookpublish
-
-
----
-
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: pay
-  labels:
-    app: pay
-spec:
-  ports:
-    - port: 8080
-      targetPort: 8080
-  selector:
-    app: pay
 
 
 ---
@@ -396,4 +379,21 @@ spec:
       targetPort: 8080
   selector:
     app: genimage
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pay
+  labels:
+    app: pay
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: pay
 
