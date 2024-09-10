@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 public class PolicyHandler {
 
     @Autowired
-    PayRepository payRepository;
+    PaymenthistoryRepository paymenthistoryRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
@@ -36,7 +36,7 @@ public class PolicyHandler {
         );
 
         // Sample Logic //
-        Pay.payCancelled(event);
+        Paymenthistory.payCancelled(event);
     }
 }
 //>>> Clean Arch / Inbound Adaptor

@@ -32,11 +32,11 @@ public class BookPurchase {
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
-        lanedu.external.Pay pay = new lanedu.external.Pay();
+        lanedu.external.Paymenthistory paymenthistory = new lanedu.external.Paymenthistory();
         // mappings goes here
         BookpurchaseApplication.applicationContext
-            .getBean(lanedu.external.PayService.class)
-            .pay(pay);
+            .getBean(lanedu.external.PaymenthistoryService.class)
+            .pay(paymenthistory);
 
         PurchaseRequested purchaseRequested = new PurchaseRequested(this);
         purchaseRequested.publishAfterCommit();

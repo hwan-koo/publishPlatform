@@ -42,17 +42,11 @@
                         <v-list-item-title style="margin-bottom:10px;">
                             
                             
-                            
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ PurchaseId :  {{data.purchaseId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ PaymentTime :  {{data.paymentTime }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Price :  {{data.price }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ MemberId :  {{data.memberId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -121,9 +115,6 @@
             
             this.newValue = {
                 'purchaseId': 0,
-                'paymentTime': '2024-09-10',
-                'price': 0,
-                'memberId': '',
             }
         },
         methods: {

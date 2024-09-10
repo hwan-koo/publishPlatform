@@ -14,7 +14,7 @@ public class PayApproved extends AbstractEvent {
     private Long id;
     private Long purchaseId;
 
-    public PayApproved(Pay aggregate) {
+    public PayApproved(Paymenthistory aggregate) {
         super(aggregate);
     }
 

@@ -23,8 +23,8 @@ import GenstoryGenStoryDetail from "./components/listers/GenstoryGenStoryDetail"
 import GenimageGenImageManager from "./components/listers/GenimageGenImageCards"
 import GenimageGenImageDetail from "./components/listers/GenimageGenImageDetail"
 
-import PayPayManager from "./components/listers/PayPayCards"
-import PayPayDetail from "./components/listers/PayPayDetail"
+import PayPaymenthistoryManager from "./components/listers/PayPaymenthistoryCards"
+import PayPaymenthistoryDetail from "./components/listers/PayPaymenthistoryDetail"
 
 
 export default new Router({
@@ -98,14 +98,14 @@ export default new Router({
             },
 
             {
-                path: '/pays/pays',
-                name: 'PayPayManager',
-                component: PayPayManager
+                path: '/pays/paymenthistories',
+                name: 'PayPaymenthistoryManager',
+                component: PayPaymenthistoryManager
             },
             {
-                path: '/pays/pays/:id',
-                name: 'PayPayDetail',
-                component: PayPayDetail
+                path: '/pays/paymenthistories/:id',
+                name: 'PayPaymenthistoryDetail',
+                component: PayPaymenthistoryDetail
             },
 
 
